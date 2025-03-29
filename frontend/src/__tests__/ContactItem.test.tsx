@@ -1,4 +1,3 @@
-// src/__tests__/ContactItem.test.tsx
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import ContactItem from '../components/ContactItem';
 import { vi } from 'vitest';

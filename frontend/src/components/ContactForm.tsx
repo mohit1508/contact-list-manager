@@ -8,6 +8,7 @@ const ContactForm = ({ setContacts, onClose }: { setContacts: React.Dispatch<Rea
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 
+  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
@@ -20,14 +21,14 @@ const ContactForm = ({ setContacts, onClose }: { setContacts: React.Dispatch<Rea
       setEmail('');
       onClose();
     } catch (err) {
-        if (typeof err === 'object' && err !== null && 'response' in err) {
-            const errorResponse = err as { response?: { data?: { message?: string } } };
-            setError(errorResponse.response?.data?.message || 'Sorry something went wrong');
-        } else if (err instanceof Error) {
-            setError(err.message);  
-        } else {
-            setError('Sorry something went wrong');
-        }
+      if (typeof err === 'object' && err !== null && 'response' in err) {
+        const errorResponse = err as { response?: { data?: { message?: string } } };
+        setError(errorResponse.response?.data?.message || 'Sorry something went wrong');
+      } else if (err instanceof Error) {
+        setError(err.message);  
+      } else {
+        setError('Sorry something went wrong');
+      }
     }
   };
 
@@ -48,7 +49,6 @@ const ContactForm = ({ setContacts, onClose }: { setContacts: React.Dispatch<Rea
         className="border p-2 rounded-lg w-full mb-4 bg-gray-50 placeholder-gray-500"
       />
       {error && <p className="text-red-500 mb-2">{error}</p>}
-      {/* <button type="submit" className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg w-full">Add Contact</button> */}
       <div className="grid grid-cols-2 gap-4">
         <button
           type="submit"
@@ -71,3 +71,4 @@ const ContactForm = ({ setContacts, onClose }: { setContacts: React.Dispatch<Rea
 };
 
 export default ContactForm;
+

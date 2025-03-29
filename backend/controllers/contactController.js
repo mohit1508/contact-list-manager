@@ -1,6 +1,7 @@
 const ContactModel = require('../models/contactModel');
 
 const ContactController = {
+    // Fetch list of contacts with optional pagination and search
     async getContacts(req, res) {
         try {
             const { limit = 10, offset = 0, search = '' } = req.query;
@@ -11,6 +12,7 @@ const ContactController = {
         }
     },
 
+    // Add new contact
     async addContact(req, res) {
         try {
             const { name, email } = req.body;
@@ -26,6 +28,7 @@ const ContactController = {
         }
     },
 
+    // Delete contact by ID
     async deleteContact(req, res) {
         try {
             const { id } = req.params;
@@ -36,6 +39,7 @@ const ContactController = {
         }
     },
 
+    // Update contact by ID
     async updateContact(req, res) {
         try {
         const { id } = req.params;

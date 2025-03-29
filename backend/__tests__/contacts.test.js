@@ -7,7 +7,7 @@ beforeAll(async () => {
   await pool.query('DELETE FROM contacts');
 });
 
-// Close DB connection after tests
+// Closes all DB connection after tests
 afterAll(() => pool.end());
 
 describe('Contacts API', () => {
