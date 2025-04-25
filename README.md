@@ -1,6 +1,6 @@
 # Contact List Manager
 
-A full-stack contact management application built with **React**, **TypeScript**, **Vite**, **TailwindCSS**, **Framer Motion**, **Node.js**, **Express**, and **PostgreSQL**.
+A full-stack contact management application built with **React**, **TypeScript**, **Vite**, **TailwindCSS**, **Node.js**, **Express**, and **PostgreSQL**.
 
 Users can add, edit, delete, and search contacts with features like infinite scroll, input validation, and responsive UI.
 
@@ -187,4 +187,4 @@ npm test
 
 The application follows a clean **MVC architecture** on the backend and component-based architecture in the frontend. Infinite scroll is implemented using the `IntersectionObserver` API. For consistency and user experience, contacts are sorted alphabetically, and duplicates are handled properly with error messages.
 
-The app is designed to be scalable, readable, and testable. Key logic is modularized, and basic test cases are written for both frontend and backend covering add, edit, delete, and validations.
+The app is designed to be scalable, readable, and testable. Key logic is modularized, and basic test cases are written for both frontend and backend, covering add, edit, delete, and validations.
